@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.env
+venv/
+ENV/
+.venv
+*.csv
+
+# Replit specific
+.pythonlibs/
+.upm/
+.config/
+.replit
+.cache/
+replit.nix
+
+# IDE
+.idea/
+.vscode/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Local data
+activities.csv

@@ -1,0 +1,38 @@
+.stApp {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.activity-card {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.metric-container {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.header-image {
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+div.stButton > button {
+    width: 100%;
+    border-radius: 5px;
+    background-color: #FF4B4B;
+    color: white;
+}
+
+.stat-card {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin: 0.5rem 0;
+}
