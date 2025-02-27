@@ -3,11 +3,45 @@
 ## Overview
 RunTracker is a Strava-like application built with Streamlit that allows users to track their running activities, visualize progress, and maintain an activity log.
 
-## Technical Stack
-- **Frontend Framework**: Streamlit
-- **Data Visualization**: Plotly
-- **Data Processing**: Pandas
-- **Data Storage**: CSV-based local storage
+## Technical Stack Breakdown
+
+### Core Technologies
+1. **Python (3.11)**
+   - Primary programming language
+   - Used for data processing, analysis, and backend logic
+   - Chosen for its rich ecosystem of data science libraries
+
+2. **Streamlit**
+   - Modern web framework for data applications
+   - Provides interactive widgets and data visualization tools
+   - Enables rapid development of data-driven interfaces
+   - Handles state management and UI updates automatically
+
+### Data Processing & Analysis
+1. **Pandas**
+   - Data manipulation and analysis library
+   - Handles CSV file operations efficiently
+   - Provides DataFrame structure for activity data
+   - Used for statistical calculations and data transformations
+
+2. **NumPy**
+   - Numerical computing library
+   - Supports advanced mathematical operations
+   - Used for array operations and calculations
+   - Powers the statistical analysis features
+
+### Visualization Libraries
+1. **Plotly**
+   - Interactive plotting library
+   - Creates dynamic and responsive charts
+   - Supports various chart types (line, bar, pie)
+   - Used for trend analysis and data visualization
+
+### Storage
+- **CSV-based local storage**
+  - Simple, portable data storage solution
+  - Easy to backup and version control
+  - Structured data format for activities
 
 ## Component Structure
 
@@ -37,6 +71,13 @@ RunTracker is a Strava-like application built with Streamlit that allows users t
   - Weekly distance chart
   - Activity type distribution
 
+#### Analytics (components/analytics.py)
+- Advanced performance metrics:
+  - Pace trends over time
+  - Activity type analysis
+  - Monthly progress tracking
+  - Personal records tracking
+
 #### Activity Logger (components/activity_logger.py)
 - Form for logging new activities
 - Fields:
@@ -62,41 +103,35 @@ RunTracker is a Strava-like application built with Streamlit that allows users t
 
 ## Data Structure
 Activities are stored in a CSV file with the following columns:
-- date
-- activity_type
-- distance
-- duration
-- pace
-- calories
-- notes
+- date: Activity date (YYYY-MM-DD)
+- activity_type: Type of running activity
+- distance: Distance in kilometers
+- duration: Duration in minutes
+- pace: Calculated pace in min/km
+- calories: Estimated calories burned
+- notes: User notes/comments
 
-## Key Features
+## Implementation Details
 
-### 1. Activity Tracking
-- Log different types of running activities
-- Automatic pace calculation
-- Simple calorie estimation
-- Notes for each activity
+### Data Processing
+- Activity data is processed using Pandas DataFrames
+- Statistical calculations utilize NumPy for efficiency
+- Real-time metrics updates on new activity logs
 
-### 2. Data Visualization
-- Weekly progress tracking
-- Activity type distribution
-- Real-time metric updates
+### Visualization Implementation
+- Plotly Express for quick, attractive charts
+- Plotly Graph Objects for custom visualizations
+- Interactive charts with zoom and hover details
 
-### 3. User Interface
-- Clean, intuitive design
-- Responsive layout
-- Easy navigation
-- Visual feedback on actions
-
-## Future Enhancements
-1. Advanced analytics and insights
-2. Personal records and achievements
+### State Management
+- Streamlit session state for persistent data
+- Automatic UI updates on data changes
+- Efficient data caching for performance
 
 ## Setup Instructions
 1. Install required packages:
    ```bash
-   pip install streamlit pandas plotly
+   pip install streamlit pandas plotly numpy
    ```
 2. Run the application:
    ```bash
@@ -111,9 +146,20 @@ Activities are stored in a CSV file with the following columns:
 │   └── style.css        # Custom styling
 ├── components/
 │   ├── dashboard.py     # Dashboard component
+│   ├── analytics.py     # Advanced analytics
 │   ├── activity_logger.py    # Activity logging
 │   └── activity_history.py   # Activity history
 ├── data_manager.py      # Data management
 ├── utils.py            # Utility functions
 └── main.py            # Main application
 ```
+
+## Future Enhancements
+1. Advanced analytics and insights
+   - Machine learning for performance predictions
+   - Advanced trend analysis
+   - Personalized recommendations
+2. Personal records and achievements
+   - Automatic milestone detection
+   - Achievement badges
+   - Progress tracking
